@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Matomo Cloud Analytics
+
+This project now includes Matomo Cloud analytics without adding a new npm dependency.
+
+Set these environment variables locally in `.env.local` and in your Vercel project settings:
+
+```bash
+NEXT_PUBLIC_MATOMO_HOST=your-subdomain.matomo.cloud
+NEXT_PUBLIC_MATOMO_SITE_ID=1
+```
+
+Use the host value without `https://`. The tracker script URL is derived automatically from that host.
+
+After setting the variables:
+
+1. Create or open your site in Matomo Cloud and copy the site ID.
+2. Add the variables to Vercel for both Production and any Preview environments you want to track.
+3. Redeploy the site and verify that page views appear in Matomo.
